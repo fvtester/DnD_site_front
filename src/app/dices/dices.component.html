@@ -1,0 +1,13 @@
+<h3>Выберите кубик:</h3>
+<form>
+  <label>Выберите кубик: </label>
+   <select class="form-control" name="dice"  [(ngModel)]="dice">
+     <option  *ngFor="let dice of dices" [ngValue]="dice">
+       {{dice.description}}
+     </option>
+   </select>
+  <button type="button">Бросить кубик</button>
+</form>
+  <span *ngIf="dice">
+  <img id="title_image" src = {{dice.image}}>
+  </span>

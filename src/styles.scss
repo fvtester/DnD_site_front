@@ -24,6 +24,24 @@ button:hover {
   background-color: #B22222;
   color: white;
 }
+
+nav a { background-color: #FFA07A;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  color: black;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 0.2rem;
+  margin-top: 0.2rem;
+}
+nav a:hover {
+  background-color: #B22222;
+  color: white;
+}
+
 .badge {
   display: inline-block;
   font-size: small;

@@ -1,7 +1,7 @@
 
 <app-hero-detail [selectedHero]="selectedHero"></app-hero-detail>
 <span>
-  <h2>My Heroes</h2>
+  <h2>Мои персонажи</h2>
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">

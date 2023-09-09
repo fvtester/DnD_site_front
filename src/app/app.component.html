@@ -2,5 +2,9 @@
 <img id="title_image" src = "../assets/dungeons-and-dragons.svg">
 <h1 id="title">{{title}}</h1>
 </div>
-<app-heroes></app-heroes>
+<nav>
+  <a routerLink="/heroes">Персонажи</a>
+  <a routerLink="/dices">Бросить кубики</a>
+</nav>
+<router-outlet></router-outlet>
 <app-messages></app-messages>
