@@ -5,8 +5,12 @@
        {{dice.description}}
      </option>
    </select>
-  <button type="button">Бросить кубик</button>
+  <button type="button" (click) = "throwDice()">Бросить кубик</button>
+    <span *ngIf="result">
+  <h3>Результат: {{result}}</h3>
+  </span>
 </form>
   <span *ngIf="dice">
   <img id="dice_image" src = {{dice.image}}>
   </span>
+

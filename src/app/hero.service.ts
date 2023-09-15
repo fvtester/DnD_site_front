@@ -19,22 +19,22 @@ export class HeroService {
   const hero = this.heroes.find(h => h.id === id)!;
   this.messageService.add(`HeroService: fetched hero id=${id}`);
   if (hero) {
-  return of(hero);
+      return of(hero);
+    }
+      return of({ id: 0, name: 'No name' });
   }
-  return of({ id: 0, name: 'No name' });
-}
 
-/** Log a HeroService message with the MessageService */
-private log(message: string) {
-  this.messageService.add(`HeroService: ${message}`);
-}
+  /** Log a HeroService message with the MessageService */
+  private log(message: string) {
+    this.messageService.add(`HeroService: ${message}`);
+  }
 
-private heroesUrl = 'http://127.0.0.1:8000/heroes/api/heroeslist';  // URL to web api
+  private heroesUrl = 'http://127.0.0.1:8000/heroes/api/heroeslist';  // URL to web api
 
-public heroes: Hero[] = [];
-constructor(private http: HttpClient, private messageService: MessageService) { }
-ngOnInit(): void {
-  this.getHeroes().subscribe(heroes => this.heroes = heroes);
+  public heroes: Hero[]=[];
+
+  constructor(private http: HttpClient, private messageService: MessageService) {
+    this.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 }
 
