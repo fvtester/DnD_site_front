@@ -1,6 +1,6 @@
 <h3>Выберите кубик:</h3>
 <form>
-   <select class="form-control" name="dice"  [(ngModel)]="dice">
+   <select class="form-control" name="dice"  [(ngModel)]="dice" (click)="onSelect()">
      <option  *ngFor="let dice of dices" [ngValue]="dice">
        {{dice.description}}
      </option>

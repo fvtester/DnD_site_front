@@ -14,13 +14,13 @@ export class DicesComponent {
   dice?: Dice;
   result?: number;
 
-  onInit(){
+
+  OnInit(){
     this.dice = DICES.find(dice => dice.id === 4);
   }
 
-  onSelect(id:number): void {
-  this.dice=DICES.find(dice => dice.id === id);
-  console.log(this.dice);
+  onSelect(): void {
+  this.result = 0;
   }
 
   throwDice(): void {
