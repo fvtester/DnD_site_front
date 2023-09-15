@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DicesComponent } from './dices/dices.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +21,7 @@ import { DicesComponent } from './dices/dices.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

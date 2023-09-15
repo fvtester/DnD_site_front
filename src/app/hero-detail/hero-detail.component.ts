@@ -25,9 +25,14 @@ export class HeroDetailComponent {
   getHero(): void {
   const id = Number(this.route.snapshot.paramMap.get('id'));
   this.heroService.getHero(id)
-    .subscribe(hero => this.selectedHero = hero);
+    .subscribe(hero => {
+      if (hero) {
+        this.selectedHero = hero;
+        }
+      }
+    );
   }
-  
+
   goBack(): void {
   this.location.back();
 }
