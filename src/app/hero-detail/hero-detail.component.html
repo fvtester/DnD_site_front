@@ -1,10 +1,42 @@
-<span *ngIf="selectedHero">
+<div *ngIf="selectedHero">
 <h2>Редактор персонажа</h2>
 <h2>{{selectedHero.name | uppercase}} характеристики</h2>
   <div><span>id: </span>{{selectedHero.id}}</div>
   <div>
+    <div><span>Уровень: </span>{{selectedHero.level}}</div>
+    <div><span>Очки здоровья: </span>{{selectedHero.hit_points}}</div>
+  <div>
+
   <label for="name">Имя персонажа: </label>
-  <input id="name" [(ngModel)]="selectedHero.name" placeholder="name">
+    <input id="name" [(ngModel)]="selectedHero.name" placeholder="name">
+    <div>
+    <input id="name" [(ngModel)]="selectedHero.description" placeholder="description">
+    </div>
+    <div>
+      <span>Сила: </span>
+      <input id="name" [(ngModel)]="selectedHero.strength" placeholder="strength">
+      </div>
+    <div>
+      <span>Ловкость: </span>
+      <input id="name" [(ngModel)]="selectedHero.dexterity" placeholder="dexterity">
+      </div>
+    <div>
+      <span>Телосложение: </span>
+      <input id="name" [(ngModel)]="selectedHero.constitution" placeholder="constitution">
+      </div>
+    <div>
+      <span>Интеллект: </span>
+      <input id="name" [(ngModel)]="selectedHero.intelligence" placeholder="intelligence">
+      </div>
+    <div>
+      <span>Мудрость: </span>
+      <input id="name" [(ngModel)]="selectedHero.wisdom" placeholder="wisdom"></div>
+    <div>
+      <span>Харизма: </span>
+      <input id="name" [(ngModel)]="selectedHero.charisma" placeholder="charisma"></div>
+
+  <!-- race?: string;
+   hero_class?: string;-->
 </div>
   <button type="button" (click)="goBack()">go back</button>
-</span>
+</div>
