@@ -1,0 +1,11 @@
+#description {height: 5rem;}
+#name {margin: 1rem;}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 20px;
+  grid-auto-rows: minmax(30px, auto);
+  margin: 1rem;
+}
+.characteristic_name {width: 10rem; grid-column: 1;}
+.characteristic {grid-column: 2;}
