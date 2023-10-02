@@ -9,6 +9,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HeroService {
+  private heroesUrl = 'http://127.0.0.1:8000/heroes/api/heroeslist';  // URL to web api
+
+  public heroes: Hero[]=[];
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
+
   getHeroes(): Observable<Hero[]> {
   this.messageService.add('HeroService: fetched heroes');
   return this.http.get<Hero[]>(this.heroesUrl).pipe(tap(_ => this.log('fetched heroes')),
@@ -26,14 +35,18 @@ export class HeroService {
   );
   }
 
+  updateHero(hero: Hero): Observable<any> {
+  const url = `${this.heroesUrl}/${hero.id}`;
+  return this.http.put(url, hero, this.httpOptions).pipe(
+    tap(_ => this.log(`updated hero id=${hero.id}`)),
+    catchError(this.handleError<any>('updateHero'))
+    );
+  }
+
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
   }
-
-  private heroesUrl = 'http://127.0.0.1:8000/heroes/api/heroeslist';  // URL to web api
-
-  public heroes: Hero[]=[];
 
   constructor(private http: HttpClient, private messageService: MessageService) {
     this.getHeroes().subscribe(heroes => this.heroes = heroes);

@@ -9,7 +9,7 @@
 
   <label for="name">Имя персонажа: </label>
     <input id="name" [(ngModel)]="selectedHero.name" placeholder="name">
-
+    <div><img [src]="selectedHero.picture" height=300rem></div>
     <div>
       <textarea id="description" [(ngModel)]="selectedHero.description" placeholder="description"></textarea>
     </div>
@@ -36,10 +36,11 @@
         <div class ="characteristic_name">Харизма: </div>
         <input class ="characteristic" id="charisma" [(ngModel)]="selectedHero.charisma" placeholder="charisma"></div>
       </div>
+    <button type="button" (click)="save()">Сохранить</button>
   </div>
   <!-- race?: string;
    hero_class?: string;-->
 
-  <button type="button" (click)="goBack()">go back</button>
+  <button type="button" (click)="goBack()">Назад</button>
 
 </div>

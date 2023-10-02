@@ -33,7 +33,15 @@ export class HeroDetailComponent {
     );
   }
 
+  save(): void {
+    if (this.selectedHero) {
+      this.heroService.updateHero(this.selectedHero)
+      .subscribe();}
+  }
+
   goBack(): void {
   this.location.back();
 }
 }
+
+
