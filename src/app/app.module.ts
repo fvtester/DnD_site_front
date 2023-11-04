@@ -9,13 +9,17 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DicesComponent } from './dices/dices.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SelectComponent } from './select/select.component';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    DicesComponent
+    DicesComponent,
+    SelectComponent,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule,
